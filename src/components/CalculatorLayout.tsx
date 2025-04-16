@@ -5,7 +5,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import BasicCalculator from './BasicCalculator';
 import LoanCalculator from './LoanCalculator';
 import InterestCalculator from './InterestCalculator';
-import { CalendarDays, Calculator, Percent } from 'lucide-react';
+import MortgageCalculator from './MortgageCalculator';
+import { CalendarDays, Calculator, Percent, Home } from 'lucide-react';
 
 const CalculatorLayout: React.FC = () => {
   return (
@@ -36,6 +37,13 @@ const CalculatorLayout: React.FC = () => {
                   <Percent size={18} />
                   <span className="hidden sm:inline">Interest Calculator</span>
                 </TabsTrigger>
+                <TabsTrigger 
+                  value="mortgage" 
+                  className="flex items-center gap-2 text-sm font-medium h-14 data-[state=active]:text-finance-primary"
+                >
+                  <Home size={18} />
+                  <span className="hidden sm:inline">Mortgage Calculator</span>
+                </TabsTrigger>
               </TabsList>
             </div>
             <TabsContent value="basic" className="p-0 m-0">
@@ -46,6 +54,9 @@ const CalculatorLayout: React.FC = () => {
             </TabsContent>
             <TabsContent value="interest" className="p-0 m-0">
               <InterestCalculator />
+            </TabsContent>
+            <TabsContent value="mortgage" className="p-0 m-0">
+              <MortgageCalculator />
             </TabsContent>
           </Tabs>
         </CardContent>
